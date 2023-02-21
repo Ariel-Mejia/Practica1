@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica1.Views.PageEquipos">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Nombre" FontSize="Title" Padding="5,0,0,0"/>
+            <Entry x:Name="nombre" Placeholder="Nombre del Equipo" Keyboard="Text" Margin="5,0,5,0" />
+
+            <Label Text="Fecha Fundacion" FontSize="Title" Padding="5,0,0,0"/>
+            <DatePicker x:Name="fundacion" Date="{Binding Fundacion, Mode=TwoWay}"
+                        Format="D" Margin="5,0,5,0" />
+            
+
+            <Label Text="Correo" FontSize="Title" Padding="5,0,0,0"/>
+            <Entry x:Name="correo" Placeholder="Proporcione un Correo" Keyboard="Email" Margin="5,0,5,0" />
+
+            <Label Text="Logo" FontSize="Title" Padding="5,0,0,0"/>
+            <Image x:Name="Foto" Background="Black" WidthRequest="100" HeightRequest="170" />
+            <Button x:Name="btnfoto" Text="Capturar Logo" Clicked="Btnfoto_Clicked" />
+
+
+            <Label Text="Categoria" FontSize="Default" Padding="5,0,5,0"/>
+            
+            <Picker Title="Selecione una Categoria" x:Name="categoria" TitleColor="Red">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>U12</x:String>
+                    <x:String>U18</x:String>
+                    <x:String>Mayor</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+            </Picker>
+
+
+            <Button Text="Ingresar" Clicked="Btningresar_Clicked" x:Name="btningresar"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
